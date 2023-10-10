@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { client } from './clients/Apollo';
-import { ApolloProvider } from '@apollo/client';
+import Amplify from 'aws-amplify';
+import awsconfig from './aws-exports';  // path to your aws-exports.js file
+
+Amplify.configure(awsconfig);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,9 +14,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <ApolloProvider client={client}>
       <App />
-    </ApolloProvider>
   </React.StrictMode>
 );
 
