@@ -7,7 +7,7 @@ import UserList from './components/UserList/UserList';
 import { fetchUsers } from './utils/api';
 
 const App: React.FC = () => {
-  const [userType, setUserType] = useState<UserType>('ADMIN');
+  const [userType, setUserType] = useState<UserType>(UserType.ADMIN);
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<Error | null>(null);
@@ -30,7 +30,7 @@ const App: React.FC = () => {
   if (loading) return <CircularProgress />;
   if (error) return <ErrorText variant="h6" color="error">Error fetching users: {error.message}</ErrorText>;
 
-  const filteredCustomers = users.filter(user => user.role === userType);
+  const filteredCustomers = users ? users.filter(user => user.role === userType) : [];
 
   return (
     <StyledContainer>

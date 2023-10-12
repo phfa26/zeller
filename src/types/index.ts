@@ -1,4 +1,7 @@
-export type UserType = 'ADMIN' | 'MANAGER';
+export enum UserType {
+  ADMIN = 'ADMIN',
+  MANAGER = 'MANAGER',
+}
 
 export type User = {
   id: string;
