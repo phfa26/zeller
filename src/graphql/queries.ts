@@ -1,6 +1,7 @@
-import { gql } from "@apollo/client";
+/* eslint-disable */
+// this is an auto generated file. This will be overwritten
 
-export const ListZellerCustomers = gql(`
+export const ListZellerCustomers = /* GraphQL */`
   query ListZellerCustomers {
   listZellerCustomers {
     items {
@@ -9,4 +10,5 @@ export const ListZellerCustomers = gql(`
       role
     }
   }
-}`)
+}
+`
