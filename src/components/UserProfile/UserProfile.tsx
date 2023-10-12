@@ -1,19 +1,23 @@
 import React from 'react';
+import { User } from '../../types';
+import { ProfileImagePlaceholder, RegularText, UserRoleText, UserContainer, UserInfo } from './styles';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { ProfileImagePlaceholder, RegularText } from './styles';
 
 interface UserProfileProps {
-  name?: string;
+  user: User;
 }
 
-const UserProfile: React.FC<UserProfileProps> = ({ name }) => {
+const UserProfile: React.FC<UserProfileProps> = ({ user }) => {
   return (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
-      <ProfileImagePlaceholder> 
-        {name ? name[0].toUpperCase() : <AccountCircleIcon /> }
-      </ProfileImagePlaceholder>
-      <RegularText>{name ?? 'Unnamed User'}</RegularText>
-    </div>
+    <UserContainer>
+        <ProfileImagePlaceholder>
+          {user.name ? user.name[0].toUpperCase() : <AccountCircleIcon />}
+        </ProfileImagePlaceholder>
+      <UserInfo>
+        <RegularText>{user.name ?? 'Unnamed User'}</RegularText>
+        <UserRoleText variant="body2">{user.role.toLowerCase()}</UserRoleText>
+      </UserInfo>
+    </UserContainer>
   );
 };
 
