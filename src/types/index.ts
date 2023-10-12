@@ -1,4 +1,4 @@
-export type UserType = 'Admin' | 'Manager';
+export type UserType = 'ADMIN' | 'MANAGER';
 
 export type User = {
   id: string;
@@ -7,7 +7,9 @@ export type User = {
 };
 
 export type QueryResponse = {
+    data: {
   listZellerCustomers: {
     items: User[];
   };
+}
 };
