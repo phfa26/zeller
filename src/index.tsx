@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {Amplify} from 'aws-amplify';
 import awsconfig from './aws-exports.js';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
-import theme from './theme';
+import theme from './common/theme';
 
 (Amplify as any).configure(awsconfig);
 

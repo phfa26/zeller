@@ -3,9 +3,13 @@ import { Container, Typography } from '@mui/material';
 
 export const StyledContainer = styled(Container)`
   max-width: 400px;
-  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-left;
   padding: 20px;
-  background-color: #f5f5f5;
+  box-sizing: border-box;
 `;
 
 export const Title = styled(Typography)`

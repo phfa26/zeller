@@ -34,10 +34,10 @@ const App: React.FC = () => {
 
   return (
     <StyledContainer>
-      <Title variant="h4">Select User Type</Title>
+      <Title variant="h4">User Types</Title>
       <UserTypeSelector userType={userType} setUserType={setUserType} />
       {filteredCustomers.length > 0 ? (
-        <UserList users={filteredCustomers} />
+        <UserList users={filteredCustomers} role={userType}/>
       ) : (
         <ErrorText variant="h6">No users found for selected role</ErrorText>
       )}
